@@ -26,17 +26,17 @@ describe('immutability', () => {
         }
 
         it('is immutable', () => {
-            let state = List.of('Trainspotting', '28 Days Later');
-            let nextState = addMovie(state, 'Sunshine');
+            let state = List.of('Top Gun', 'Rain Man');
+            let nextState = addMovie(state, 'Mission Impossible');
 
             expect(nextState).to.equal(List.of(
-                'Trainspotting',
-                '28 Days Later',
-                'Sunshine'
+                'Top Gun',
+                'Rain Man',
+                'Mission Impossible'
             ));
             expect(state).to.equal(List.of(
-                'Trainspotting',
-                '28 Days Later'
+                'Top Gun',
+                'Rain Man'
             ));
         });
 
@@ -50,21 +50,21 @@ describe('immutability', () => {
 
         it('is immutable', () => {
             let state = Map({
-                movies: List.of('Trainspotting', '28 Days Later')
+                movies: List.of('Top Gun', 'Rain Man')
             });
-            let nextState = addMovie(state, 'Sunshine');
+            let nextState = addMovie(state, 'Mission Impossible');
 
             expect(nextState).to.equal(Map({
                 movies: List.of(
-                    'Trainspotting',
-                    '28 Days Later',
-                    'Sunshine'
+                    'Top Gun',
+                    'Rain Man',
+                    'Mission Impossible'
                 )
             }));
             expect(state).to.equal(Map({
                 movies: List.of(
-                    'Trainspotting',
-                    '28 Days Later'
+                    'Top Gun',
+                    'Rain Man'
                 )
             }));
         });
